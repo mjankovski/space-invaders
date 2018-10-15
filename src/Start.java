@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JDialog;
 
 /**
  * Klasa menu glownego.
@@ -107,8 +109,14 @@ public class Start extends JPanel {
 				getAliensX();
 				getAliensY();
 				} catch (IllegalArgumentException e) {
-					System.out.println("Bledny zakres parametru.");
-				};
+					rowField.setText(Integer.toString(Start.aliensY));
+					columnField.setText(Integer.toString(Start.aliensX));
+					JOptionPane optionPane = new JOptionPane("Nieprawidlowa wartosc parametru!\nZakres kolumn: 1-20" +
+							"\nZakres wierszy: 1-15",JOptionPane.ERROR_MESSAGE);
+					JDialog dialog = optionPane.createDialog("Error!");
+					dialog.setAlwaysOnTop(true);
+					dialog.setVisible(true);
+				}
 			}
 		});
 
