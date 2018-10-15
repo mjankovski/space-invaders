@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"Alien"},{"p":"<Unnamed>","l":"Alien.BombAlien"},{"p":"<Unnamed>","l":"Config"},{"p":"<Unnamed>","l":"End"},{"p":"<Unnamed>","l":"Game"},{"p":"<Unnamed>","l":"Game.TAdapter"},{"p":"<Unnamed>","l":"Player"},{"p":"<Unnamed>","l":"PlayerShot"},{"p":"<Unnamed>","l":"SpaceInvaders"},{"p":"<Unnamed>","l":"Sprite"},{"p":"<Unnamed>","l":"Start"}]
