@@ -106,16 +106,16 @@ public class Start extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				try {
-				getAliensX();
-				getAliensY();
+					getAliensX();
+				} catch (IllegalArgumentException e) {
+					columnField.setText(Integer.toString(Start.aliensX));
+					showMsg("Zakres kolumn: 1-20");
+				}
+				try {
+					getAliensY();
 				} catch (IllegalArgumentException e) {
 					rowField.setText(Integer.toString(Start.aliensY));
-					columnField.setText(Integer.toString(Start.aliensX));
-					JOptionPane optionPane = new JOptionPane("Nieprawidlowa wartosc parametru!\nZakres kolumn: 1-20" +
-							"\nZakres wierszy: 1-15",JOptionPane.ERROR_MESSAGE);
-					JDialog dialog = optionPane.createDialog("Error!");
-					dialog.setAlwaysOnTop(true);
-					dialog.setVisible(true);
+					showMsg("Zakres wierszy: 1-15");
 				}
 			}
 		});
@@ -134,6 +134,13 @@ public class Start extends JPanel {
 			System.err.println("Blad odczytu grafiki");
 			e.printStackTrace();
 		}
+	}
+
+	public void showMsg(String txt){
+		JOptionPane optionPane = new JOptionPane("Nieprawidlowa wartosc parametru!\n" + txt,JOptionPane.ERROR_MESSAGE);
+		JDialog dialog = optionPane.createDialog("Error!");
+		dialog.setAlwaysOnTop(true);
+		dialog.setVisible(true);
 	}
 
 	/**
